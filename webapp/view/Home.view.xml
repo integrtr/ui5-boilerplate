@@ -1,0 +1,9 @@
+<mvc:View
+  controllerName="ui5boilerplate.controller.Home"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page showHeader="true" title="{i18n>HELLO_MESSAGE}">
+  </Page>
+</mvc:View>
