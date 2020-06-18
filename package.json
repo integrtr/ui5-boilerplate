@@ -3,34 +3,33 @@
   "version": "1.0.0",
   "description": "UI5 Boilerplate project",
   "private": true,
-  "author": "TheVivekGowda",
+  "author": "INTEGRTR | TheVivekGowda",
   "license": "UNLICENSED",
   "keywords": [
-    "UI5"
+    "UI5",
+    "INTEGRTR"
   ],
   "homepage": "",
   "scripts": {
     "start": "ui5 serve -o",
     "serve-dist": "ui5 serve --config ui5-dist.yaml -o",
     "build": "ui5 build self-contained --clean-dest",
-    "builda-all": "ui5 build self-contained -a --clean-dest",
+    "build-all": "ui5 build self-contained -a --clean-dest",
     "build-preload": "ui5 build --clean-dest",
     "build-preload-all": "ui5 build -a --clean-dest"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/integrtr/ui5-boilerplate"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/integrtr/ui5-boilerplate/issues"
   },
   "dependencies": {},
   "devDependencies": {
     "@prettier/plugin-xml": "^0.7.2",
     "@ui5/cli": "^2.2.3",
-    "commitlint": "^8.3.5",
     "editorconfig": "^0.15.3",
-    "husky": "^4.2.3",
     "local-web-server": "^3.0.7",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.2",
@@ -38,14 +37,12 @@
     "ui5-middleware-livereload": "^0.2.0",
     "ui5-middleware-livetranspile": "^0.1.9",
     "ui5-middleware-simpleproxy": "^0.2.3",
-    "ui5-task-stringreplacer": "0.4.0",
     "ui5-task-transpile": "^0.1.7"
   },
   "ui5": {
     "dependencies": [
       "ui5-middleware-simpleproxy",
       "ui5-middleware-livereload",
-      "ui5-task-stringreplacer",
       "ui5-middleware-index",
       "ui5-middleware-livetranspile",
       "ui5-task-transpile"
