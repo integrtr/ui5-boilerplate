@@ -3,7 +3,39 @@
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
 >
-	<Page showHeader="true" title="{i18n>HELLO_MESSAGE}">
+	<Page showHeader="false">
+			<FlexBox
+      class="integrtrPanelBg sapUiMediumMarginBottom"
+      height="250px"
+      alignItems="Center"
+      justifyContent="Center"
+      direction="Column"
+    >
+      <Image
+        ariaDetails="detailsActiveImage"
+        src="assets/ui5_logo.png"
+        class="sapUiMediumMarginTop"
+        width="200px"
+        decorative="false"
+      />
+				<Title class="integrtrPanelText" level="H1" titleStyle="H1" text="{i18n>HELLO_MESSAGE}" />
+      </FlexBox>
+
+    <FlexBox alignItems="Center" justifyContent="Center" direction="Row">
+      <core:Icon class="sapUiTinyMarginEnd" src="sap-icon://edit" color="#031E48" />
+      <Title titleStyle="H5" level="H5" width="100%" text="{i18n>GET_STARTED_TEXT}" />
+    </FlexBox>
+
+    <footer>
+			<Toolbar>
+				<Image src="assets/github_logo.png" width="30px" press="githubLogoPress" />
+				<ToolbarSpacer />
+				<ToolbarSpacer />
+				<Image src="assets/integrtr_logo.png" width="120px" press="integrtrLogoPress" />
+			</Toolbar>
+		</footer>
+
   </Page>
 </mvc:View>
