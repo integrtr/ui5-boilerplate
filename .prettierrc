@@ -1,12 +1,12 @@
 {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "endOfLine": "lf",
-    "bracketSpacing": true,
-    "useTabs": false,
-    "tabWidth": 2,
-    "jsxBracketSameLine": false,
-    "semi": true,
-    "editor.formatOnSave": true
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "endOfLine": "lf",
+  "bracketSpacing": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "jsxBracketSameLine": false,
+  "semi": true,
+  "editor.formatOnSave": true
 }

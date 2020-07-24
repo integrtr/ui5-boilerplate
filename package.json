@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "UI5 Boilerplate project",
   "private": true,
-  "author": "INTEGRTR | TheVivekGowda",
+  "author": "INTEGRTR",
   "license": "UNLICENSED",
   "keywords": [
     "UI5",
@@ -29,7 +29,9 @@
   "devDependencies": {
     "@prettier/plugin-xml": "^0.7.2",
     "@ui5/cli": "^2.2.3",
+    "commitlint": "^9.1.0",
     "editorconfig": "^0.15.3",
+    "husky": "^4.2.5",
     "local-web-server": "^3.0.7",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.2",

@@ -1,6 +1,6 @@
-specVersion: "2.1"
+specVersion: '2.1'
 metadata:
-  name: "ui5boilerplate"
+  name: 'ui5boilerplate'
 type: application
 resources:
   configuration:
@@ -8,7 +8,7 @@ resources:
       webapp: webapp
 framework:
   name: OpenUI5
-  version: "1.78.0"
+  version: '1.78.0'
   libraries:
     - name: sap.f
     - name: sap.m
@@ -33,21 +33,17 @@ server:
     - name: ui5-middleware-index
       afterMiddleware: compression
       configuration:
-        index: "index.html"
+        index: 'index.html'
     - name: ui5-middleware-livetranspile
       afterMiddleware: compression
       configuration:
         excludePatterns:
-          - "**/thirdparty/"
+          - '**/thirdparty/'
 builder:
   customTasks:
-    - name: ui5-task-stringreplacer
-      afterTask: replaceVersion
-      configuration:
-        files: ["**/*.js", "**/*.xml"]
     - name: ui5-task-transpile
       afterTask: replaceVersion
       configuration:
         removeConsoleStatements: true
         excludePatterns:
-          - "**/thirdparty/**"
+          - '**/thirdparty/**'
