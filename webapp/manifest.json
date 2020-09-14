@@ -7,7 +7,8 @@
     "applicationVersion": {
       "version": "1.0.0"
     },
-    "ach": "ach"
+    "ach": "ach",
+    "dataSources": {}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -52,7 +53,7 @@
     "resources": {
       "css": [
         {
-          "uri": "/css/style.css"
+          "uri": "css/style.css"
         }
       ]
     },
