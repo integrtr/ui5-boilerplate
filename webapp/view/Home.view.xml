@@ -15,7 +15,7 @@
     >
       <Image
         ariaDetails="detailsActiveImage"
-        src="assets/ui5_logo.png"
+        src="/assets/ui5_logo.png"
         class="sapUiMediumMarginTop"
         width="200px"
         decorative="false"
@@ -30,10 +30,10 @@
 
     <footer>
 			<Toolbar>
-				<Image src="assets/github_logo.png" width="30px" press="githubLogoPress" />
+				<Image src="/assets/github_logo.png" width="30px" press="githubLogoPress" />
 				<ToolbarSpacer />
 				<ToolbarSpacer />
-				<Image src="assets/integrtr_logo.png" width="120px" press="integrtrLogoPress" />
+				<Image src="/assets/integrtr_logo.png" width="120px" press="integrtrLogoPress" />
 			</Toolbar>
 		</footer>
 

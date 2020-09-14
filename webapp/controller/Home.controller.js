@@ -1,7 +1,7 @@
-sap.ui.define(['sap/ui/core/mvc/Controller'], function (Controller) {
+sap.ui.define(['ui5boilerplate/controller/Base.controller'], function (BaseController) {
   'use strict';
 
-  return Controller.extend('ui5boilerplate.controller.Home', {
+  return BaseController.extend('ui5boilerplate.controller.Home', {
     onInit: function () {},
 
     /**
