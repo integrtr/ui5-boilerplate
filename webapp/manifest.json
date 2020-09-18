@@ -35,7 +35,9 @@
     },
     "dependencies": {
       "minUI5Version": "1.72.0",
-      "libs": {},
+      "libs": {
+        "sap.m": {}
+      },
       "components": []
     },
     "contentDensities": {

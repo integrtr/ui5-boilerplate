@@ -12,7 +12,7 @@
   <script id="sap-ui-bootstrap"
           src="/resources/sap-ui-core.js"
           data-sap-ui-theme="sap_fiori_3"
-          data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+          data-sap-ui-oninit="module:ui5boilerplate/test/initMockServer"
           data-sap-ui-compatVersion="edge"
           data-sap-ui-async="true"
           data-sap-ui-frameOptions="trusted"
@@ -20,32 +20,13 @@
           data-sap-ui-resourceroots='{
             "ui5boilerplate": "../"
           }'></script>
-
-  <script>
-    sap.ui.getCore().attachInit(function () {
-      sap.ui.require([
-        "ui5boilerplate/localService/mockserver",
-        "sap/m/Shell",
-        "sap/ui/core/ComponentContainer"
-      ], function (mockserver, Shell, ComponentContainer) {
-        mockserver.init();
-
-        new Shell({
-          appWidthLimited: false,
-          app: new ComponentContainer({
-            height: "100%",
-            name: "ui5boilerplate"
-          })
-        }).placeAt("content");
-      });
-
-    });
-  </script>
 </head>
 
-<body class="sapUiBody"
-      id="content">
-
+<body class="sapUiBody">
+  <div data-sap-ui-component
+       data-name="ui5boilerplate"
+       data-id="container"
+       data-settings='{"id" : "ui5boilerplate"}'></div>
 </body>
 
 </html>
