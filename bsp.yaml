@@ -30,5 +30,6 @@ builder:
         ui5:
           language: EN
           package: zui5boilerplate
-          bspContainer: zui5boilerplate
-          bspContainerText: ui5boilerplate project
+          bspContainer: zboilerplate
+          bspContainerText: INTEGRTR Monitor application
+          calculateApplicationIndex: true
