@@ -1,0 +1,28 @@
+name: Neo Cloud Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy cloud application
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install npm dependencies
+        run: yarn
+      - name: Build UI5 Project
+        run: yarn build-all
+      - name: Build MTAR for Neo Cloud
+        run: |
+          docker run -u root -v ${PWD}:/project ppiper/mta-archive-builder:latest mtaBuild --mtar ui5app.mtar --build-target NEO build
+      - name: Deploy to Neo Cloud
+        run: |
+          docker run -u root -v ${PWD}:/project ppiper/neo-cli:latest neo.sh deploy-mta --host ${{ secrets.NEO_HOST }} --account ${{ secrets.NEO_ACCOUNT }} --source /project/ui5app.mtar --synchronous --user ${{ secrets.NEO_USER }} --password ${{ secrets.NEO_PASSWORD }}

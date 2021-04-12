@@ -16,7 +16,8 @@
     "build": "ui5 build self-contained --clean-dest",
     "build-all": "ui5 build self-contained -a --clean-dest",
     "build-preload": "ui5 build --clean-dest",
-    "build-preload-all": "ui5 build -a --clean-dest"
+    "build-preload-all": "ui5 build -a --clean-dest",
+    "deploy-bsp": "ui5 build --config bsp.yaml"
   },
   "repository": {
     "type": "git",
