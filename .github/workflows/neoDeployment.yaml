@@ -1,0 +1,38 @@
+name: Neo Cloud Deployment
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+jobs:
+  Deployment:
+    name: Application Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to repository
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Load NPM dependencies
+        run: yarn
+      - name: Building Project
+        run: yarn build-all
+      - name: Deploying Project
+        uses: integrtr/ui5-deploy@master
+        with:
+          type: 'neo'
+          user: ${{ secrets.NEO_USER }}
+          password: ${{ secrets.NEO_PASSWORD }}
+          host: ${{ secrets.NEO_HOST }}
+          sub-account-id: ${{ secrets.NEO_ACCOUNT }}
