@@ -1,0 +1,34 @@
+name: BSP Deployment
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+jobs:
+  Deployment:
+    name: Application Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to repository
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Load NPM dependencies
+        run: yarn
+      - name: Building Project
+        run: yarn build-preload
+      - name: Deploying Project
+        uses: integrtr/ui5-deploy@master
+        with:
+          type: 'bsp'
+          user: ${{ secrets.ABAP_USER }}
+          password: ${{ secrets.ABAP_PASSWORD }}
+          host: ${{ secrets.ABAP_HOST }}
