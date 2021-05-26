@@ -1,6 +1,4 @@
-sap.ui.define(['../localService/mockserver'], function (mockserver) {
-  'use strict';
-
+sap.ui.define(['../localService/mockserver'], (mockserver) => {
   // initialize the mock server
   mockserver.init();
 

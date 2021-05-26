@@ -12,12 +12,13 @@
   "homepage": "",
   "scripts": {
     "start": "ui5 serve -o",
+    "test": "ui5 serve -o test/mockServer.html",
     "serve-dist": "ui5 serve --config ui5-dist.yaml -o",
     "build": "ui5 build self-contained --clean-dest",
     "build-all": "ui5 build self-contained -a --clean-dest",
     "build-preload": "ui5 build --clean-dest",
     "build-preload-all": "ui5 build -a --clean-dest",
-    "deploy-bsp": "ui5 build --config bsp.yaml"
+    "lint": "eslint webapp"
   },
   "repository": {
     "type": "git",
@@ -33,24 +34,21 @@
     "commitlint": "^9.1.0",
     "editorconfig": "^0.15.3",
     "husky": "^4.2.5",
-    "local-web-server": "^3.0.7",
     "prettier": "^2.0.2",
-    "rimraf": "^3.0.2",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "ui5-middleware-index": "^0.1.1",
     "ui5-middleware-livereload": "^0.2.0",
     "ui5-middleware-livetranspile": "^0.1.9",
-    "ui5-middleware-simpleproxy": "^0.2.3",
-    "ui5-task-transpile": "^0.1.7",
-    "ui5-task-nwabap-deployer": "^1.0.15"
+    "ui5-task-transpile": "^0.1.7"
   },
   "ui5": {
     "dependencies": [
-      "ui5-middleware-simpleproxy",
       "ui5-middleware-livereload",
       "ui5-middleware-index",
       "ui5-middleware-livetranspile",
-      "ui5-task-transpile",
-      "ui5-task-nwabap-deployer"
+      "ui5-task-transpile"
     ]
   }
 }

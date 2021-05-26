@@ -1,7 +1,6 @@
-sap.ui.define(['sap/ui/core/util/MockServer'], function (MockServer) {
-  'use strict';
+sap.ui.define(['sap/ui/core/util/MockServer'], (MockServer) => {
   return {
-    init: function () {
+    init() {
       // create
       var oMockServer = new MockServer({
         rootUri: '', // rootUri and manifest dataSource uri should be same
@@ -13,8 +12,8 @@ sap.ui.define(['sap/ui/core/util/MockServer'], function (MockServer) {
         autoRespondAfter: oUriParameters.get('serverDelay') || 1000,
       });
       // simulate
-      var sPath = jQuery.sap.getModulePath('ui5boilerplate.localService');
-      oMockServer.simulate(sPath + '/metadata.xml', sPath + '/mockdata');
+      let sPath = jQuery.sap.getModulePath('ui5boilerplate.localService');
+      oMockServer.simulate(`${sPath}/metadata.xml`, `${sPath}/mockdata`);
       // start
       oMockServer.start();
     },
