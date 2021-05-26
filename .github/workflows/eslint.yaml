@@ -1,0 +1,23 @@
+name: ESLint Check
+
+on: [pull_request]
+
+jobs:
+  build:
+    name: ESLint Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to repository
+        uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Load NPM dependencies
+        run: yarn
+
+      - name: Run ESLint check
+        run: yarn lint

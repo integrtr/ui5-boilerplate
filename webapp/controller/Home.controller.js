@@ -1,20 +1,18 @@
-sap.ui.define(['ui5boilerplate/controller/Base.controller'], function (BaseController) {
-  'use strict';
-
+sap.ui.define(['ui5boilerplate/controller/Base.controller'], (BaseController) => {
   return BaseController.extend('ui5boilerplate.controller.Home', {
-    onInit: function () {},
+    onInit() {},
 
     /**
      * Press event handler for INTEGRTR logo
      */
-    integrtrLogoPress: function () {
+    integrtrLogoPress() {
       window.open('https://www.integrtr.com', '_blank');
     },
 
     /**
      * Press event handler for GitHub logo
      */
-    githubLogoPress: function () {
+    githubLogoPress() {
       window.open('https://github.com/integrtr/ui5-boilerplate', '_blank');
     },
   });
