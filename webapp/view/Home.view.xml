@@ -1,4 +1,4 @@
-<mvc:View controllerName="ui5boilerplate.controller.Home"
+<mvc:View controllerName="simple.ui.boilerplate.controller.Home"
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"

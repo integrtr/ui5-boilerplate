@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/v2/(.*)$",
+      "destination": "Northwind"
+    },
+    {
+      "source": "^/sap/(.*)$",
+      "destination": "IND"
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

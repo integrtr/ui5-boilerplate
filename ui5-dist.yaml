@@ -1,6 +1,6 @@
 specVersion: '2.1'
 metadata:
-  name: 'ui5boilerplate'
+  name: 'boilerplate'
 type: application
 resources:
   configuration:

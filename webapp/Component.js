@@ -1,5 +1,5 @@
 sap.ui.define(['sap/ui/core/UIComponent'], (UIComponent) => {
-  return UIComponent.extend('ui5boilerplate.Component', {
+  return UIComponent.extend('simple.ui.boilerplate.Component', {
     metadata: {
       manifest: 'json',
     },

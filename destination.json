@@ -1,0 +1,38 @@
+{
+  "HTML5Runtime_enabled": true,
+  "version": "1.0.0",
+  "init_data": {
+    "subaccount": {
+      "existing_destinations_policy": "update",
+      "destinations": [
+        {
+          "Name": "IND",
+          "Authentication": "NoAuthentication",
+          "ProxyType": "Internet",
+          "Type": "HTTP",
+          "URL": "https://integrtrdev.integrtr.com:8443",
+          "HTML5.DynamicDestination": true,
+          "WebIDEEnabled": true,
+          "WebIDEUsage": "odata_abap,ui5_execute_abap,dev_abap",
+          "WebIDESystem": "IND"
+        },
+        {
+          "Name": "Northwind",
+          "Description": "Automatically generated Northwind destination",
+          "Authentication": "NoAuthentication",
+          "ProxyType": "Internet",
+          "Type": "HTTP",
+          "URL": "https://services.odata.org",
+          "HTML5.DynamicDestination": true,
+          "WebIDEEnabled": true,
+          "WebIDEUsage": "odata_abap,ui5_execute_abap,dev_abap",
+          "WebIDESystem": "Northwind"
+        }
+      ]
+    },
+    "instance": {
+      "existing_destinations_policy": "update",
+      "destinations": []
+    }
+  }
+}

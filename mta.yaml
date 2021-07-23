@@ -1,16 +1,80 @@
-_schema-version: '2.0.0'
-ID: 'ui5boilerplate'
+_schema-version: '3.2.0'
+ID: boilerplate
 version: 1.0.0
 
-parameters:
-  hcp-deployer-version: '1.0.0'
-
 modules:
-  - name: 'ui5boilerplate'
-    type: com.sap.fiori.app
-    path: ./dist
+  - name: HTML5Module
+    type: html5
+    path: dist
+    build-parameters:
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms: []
+  - name: boilerplate-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: boilerplate-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - HTML5Module-content.zip
+          name: HTML5Module
+          target-path: resources/
+  - name: boilerplate-destination-content
+    type: com.sap.application.content
+    build-parameters:
+      no-source: true
+    requires:
+      - name: boilerplate-uaa
+        parameters:
+          service-key:
+            name: boilerplate-uaa-key
+      - name: boilerplate-html5-repo-host
+        parameters:
+          service-key:
+            name: boilerplate-html5-repo-host-key
+      - name: boilerplate-destination
+        parameters:
+          content-target: true
     parameters:
-      html5-app-name: 'ui5boilerplate'
-      html5-app-display-name: 'ui5boilerplate'
-      minimum-sapui5-version: 1.44.10
-      html5-app-version: 1.0.0-${timestamp}
+      content:
+        instance:
+          existing_destinations_policy: update
+          destinations:
+            - Name: boilerplate-destination-html5
+              ServiceInstanceName: boilerplate-html5-repo-host
+              ServiceKeyName: boilerplate-html5-repo-host-key
+              sap.cloud.service: cloud.boilerplate
+            - Name: boilerplate-destination-uaa
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: boilerplate-uaa
+              ServiceKeyName: boilerplate-uaa-key
+              sap.cloud.service: cloud.boilerplate
+resources:
+  - name: boilerplate-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: lite
+      service: destination
+      path: ./destination.json
+  - name: boilerplate-html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: app-host
+      service: html5-apps-repo
+  - name: boilerplate-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install

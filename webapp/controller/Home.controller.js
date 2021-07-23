@@ -1,5 +1,5 @@
-sap.ui.define(['ui5boilerplate/controller/Base.controller'], (BaseController) => {
-  return BaseController.extend('ui5boilerplate.controller.Home', {
+sap.ui.define(['simple/ui/boilerplate/controller/Base.controller'], (BaseController) => {
+  return BaseController.extend('simple.ui.boilerplate.controller.Home', {
     onInit() {},
 
     /**
