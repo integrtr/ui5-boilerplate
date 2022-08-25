@@ -1,0 +1,16 @@
+{
+  "cwd": "./dist",
+  "files": "**/*.*",
+  "client": "100",
+  "useStrictSSL": false,
+  "language": "EN",
+  "package": "ZUI5_DEPLOY",
+  "bspContainer": "ZUI5BP",
+  "bspContainerText": "Boilerplate",
+  "transportNo": "INDK901302",
+  "createTransport": false,
+  "transportText": "Test Transport",
+  "transportUseLocked": false,
+  "transportUseUserMatch": false,
+  "calculateApplicationIndex": true
+}
